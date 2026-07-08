@@ -1,0 +1,70 @@
+╔══════════════════════════════════════════════════════════════╗
+║  HƯỚNG DẪN DEPLOY LÊN VERCEL QUA GITHUB                      ║
+║  KHTN 8 - Chương I: Phản ứng hóa học                         ║
+╚══════════════════════════════════════════════════════════════╝
+
+📁 CÁC FILE CẦN THIẾT (đã chuẩn bị sẵn trong thư mục deploy/):
+   1. index.html    - Trang web hoàn chỉnh (606KB, tự chứa ảnh base64)
+   2. vercel.json   - Cấu hình Vercel
+   3. README.md     - Tài liệu hướng dẫn
+   4. .gitignore    - Bỏ qua file không cần thiết
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BƯỚC 1: TẠO GITHUB REPOSITORY
+──────────────────────────────
+1. Mở https://github.com và đăng nhập
+2. Click nút [+] → New repository
+3. Repository name: khtn-8-chuong-1
+4. Description: Khoa học tự nhiên 8 - Chương I - Phản ứng hóa học
+5. Chọn: Public
+6. KHÔNG tick "Add a README file"
+7. Click [Create repository]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BƯỚC 2: UPLOAD FILE LÊN GITHUB
+──────────────────────────────
+Cách A - Upload qua web:
+1. Trong repository vừa tạo, click "uploading an existing file"
+2. Kéo thả 4 file: index.html, vercel.json, README.md, .gitignore
+3. Commit message: "Initial commit"
+4. Click [Commit changes]
+
+Cách B - Upload qua Git CLI:
+  git remote add origin https://github.com/TEN-USER/khtn-8-chuong-1.git
+  git branch -M main
+  git push -u origin main
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BƯỚC 3: DEPLOY LÊN VERCEL
+─────────────────────────
+1. Mở https://vercel.com và đăng nhập (có thể dùng GitHub account)
+2. Click [Add New] → [Project]
+3. Tìm repository "khtn-8-chuong-1" → Click [Import]
+4. Cấu hình:
+   - Framework Preset: Other
+   - Root Directory: ./ (mặc định)
+   - Build Command: (để trống - không cần build)
+   - Output Directory: (để trống)
+5. Click [Deploy]
+6. Đợi 1-2 phút... ✅ HOÀN THÀNH!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KẾT QUẢ:
+────────
+Sau khi deploy thành công, Vercel sẽ cấp URL dạng:
+  https://khtn-8-chuong-1.vercel.app
+  (hoặc https://khtn-8-chuong-1-xxx.vercel.app)
+
+Mỗi lần cập nhật file trên GitHub → Vercel tự động deploy lại!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LƯU Ý:
+──────
+• File index.html đã nhúng sẵn tất cả ảnh (base64) → không cần thư mục images/
+• Trang web responsive → hiển thị tốt trên cả mobile và desktop
+• Không cần build step → deploy cực nhanh (< 30 giây)
